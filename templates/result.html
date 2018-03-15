@@ -1,0 +1,35 @@
+<html>
+   <body>
+   
+      
+      	<p> <h1> This is results</h1></p>
+      	<table border = 1>
+      	         {% for key, value in result.items() %}
+      	         
+      	            <tr>
+      	               <th> {{ key }} </th>
+      	            <td>   
+    {% if key=='Poster' %}
+        <img src={{value}}>
+    {% elif key=='Ratings'%}
+    	<table border=1>
+    	<tr>{{value[0]['Source']}}</tr>
+    	<td>{{value[0]['Value']}}</td>
+    	<tr>{{value[1]['Source']}}</tr>
+    	<td>{{value[1]['Value']}}</td>
+    	<tr>{{value[2]['Source']}}</tr>
+    	<td>{{value[2]['Value']}}</td>
+    	</table>   
+    {% else %}
+        {{ value }}
+    {% endif %}		</td>
+
+      	            </tr>
+      	            
+      	        {% endfor %}
+      	      </table>
+
+
+      
+   </body>
+</html>
